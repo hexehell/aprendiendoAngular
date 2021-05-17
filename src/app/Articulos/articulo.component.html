@@ -1,0 +1,27 @@
+<h1>Mostrar Articulo</h1>
+
+<dl *ngIf="aArticuloMostrado">
+    <dt>Nombre</dt>
+    <dd>{{aArticuloMostrado.sNombre}}</dd>
+
+    <dt>Precio</dt>
+    <dd>${{aArticuloMostrado.nPrecio_unitario}}</dd>
+
+    <dt>Total</dt>
+    <dd>{{aArticuloMostrado.nPrecio_total}}</dd>
+
+    <dt>Fecha Registro</dt>
+    <dd>{{aArticuloMostrado.dFecha_registro}}</dd>
+
+    <dt>Comprado</dt>
+    <dd *ngIf="aArticuloMostrado.fnComprado() else noComprado"><input disabled type="checkbox" name="" id="" checked > </dd>
+
+    <ng-template #noComprado>
+        <dd ><input disabled type="checkbox" name="" id=""  > </dd>
+
+    </ng-template>
+    
+
+</dl>
+
+<button (click)="fnSiguienteArt()">Articulo Siguiente</button>

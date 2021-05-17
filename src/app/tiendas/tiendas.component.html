@@ -1,0 +1,38 @@
+<h1>Tiendas Visitadas:</h1>
+
+<!-- *ngIf hasta ahora sirve como un hidden -->
+<div *ngIf="sTiendaBorrada else nadaBorrado">
+    <h3>Tienda Borrada: <small>{{sTiendaBorrada}}</small></h3>
+    
+</div> 
+
+<!-- *ngIf else este se hace referencia en el ngif y se muestra -->
+<!-- como un else -->
+
+<ng-template #nadaBorrado>
+
+    <h3>Lista no alterada</h3>
+
+</ng-template>
+
+
+<div><button (click)="fnBorrar()">borrar</button></div>
+
+
+<dl *ngFor="let tienda of Tiendas; let nTienda = index">
+
+    <dt><h3>Tienda #{{nTienda+1}}</h3></dt>
+    <dd></dd>
+
+
+    <dt><h3>Nombre</h3></dt>
+    <dd>{{tienda.sNombre}}</dd>
+
+    <dt><h3>Direccion</h3></dt>
+    <dd>{{tienda.sDireccion}}</dd>
+
+    <dt><h3>Alias</h3></dt>
+    <dd>{{tienda.sAlias}}</dd>
+<hr>
+</dl>
+
